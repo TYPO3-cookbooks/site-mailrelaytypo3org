@@ -16,4 +16,4 @@ depends          "t3-base",     "~> 0.2.0"
 # depends          "ssl_certificates",     "~> 0.2.0"
 
 # community cookbooks, pin to patchlevel (= 1.1.1)
-depends          "postfix",    "= 2.1.4"
+# depends          "postfix",    "= 2.1.4"
