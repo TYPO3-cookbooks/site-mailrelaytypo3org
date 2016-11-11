@@ -18,7 +18,7 @@ control 'postfix' do
     its('protocols') { should include 'tcp6'}
   end
 
-  describe parse_config_file('/etc/postfix/main.cf', postfix_config_options) do
+  describe parse_config_file('/etc/postfix/main.cf') do
     its('inet_interfaces') { should include 'all'}
   end
 end
