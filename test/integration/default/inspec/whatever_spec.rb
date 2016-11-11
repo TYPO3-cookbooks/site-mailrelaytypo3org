@@ -15,5 +15,6 @@ control 'postfix' do
 
   describe parse_config_file('/etc/postfix/main.cf') do
     its('inet_interfaces') { should include 'all'}
+    its('mynetworks') { should include '10.0.0.0/8'}
   end
 end
