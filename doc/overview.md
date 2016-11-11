@@ -1,4 +1,4 @@
-This cookbook provides a skeleton for TYPO3 site-cookbooks. The following sections describe the usage of the skeleton.
+This cookbook configures Postfix to relay mails for others servers.
 
 ## Cookbook Structure
 
