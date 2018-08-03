@@ -1,0 +1,8 @@
+{
+  "smarthosts": {
+    "smarthost.example.com": {
+      "username": "john.doe",
+      "password": "123456"
+    }
+  }
+}
