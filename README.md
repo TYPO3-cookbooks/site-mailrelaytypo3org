@@ -4,39 +4,6 @@
 
 Accept mails from the internal network and forward them via mail.typo3.org as smarthost
 
-## Setting up Secrets
-
-Every mailrelay server needs an own mail account. Set this up in Mailcow and configure it to **disable sender checks**.
-
-Storing the secret in chef-vault can be done as follows (after the host has been provisioned with _t3-base_):
-
-- Create local file containing data bag data (`mailtypo3org-srvXXXtypo3org.json`):
-
-```
-{
-  "smarthosts": {
-    "mail.typo3.org": {
-      "username": "mailrelay-srvXXX",
-      "password": "123456"
-    }
-  }
-}
-```
-
-- Create vault item:
-```
-
-```bash
-$ knife vault create passwords-production mailtypo3org-srvXXXtypo3org --mode client --search 'fqdn:srvXXX.typo3.org' --json mailtypo3org-srvXXXtypo3org.json
-```
-
-- Optionally: Verify that the host is really added to the vault keys:
-```
-$ knife data bag show passwords-production  mailtypo3org-srvXXXtypo3org_keys
-```
-
-- Delete clear-text file, DO NOT COMMIT!
-
 # Requirements
 
 ## Platform:
@@ -47,9 +14,9 @@ $ knife data bag show passwords-production  mailtypo3org-srvXXXtypo3org_keys
 
 * t3-base (~> 0.2.0)
 * t3-chef-vault (~> 1.0.0)
-* #<Logger:0x00007f850223f5d0> () (Recommended but not required)
-* #<Logger:0x00007f850223f5d0> () (Suggested but not required)
-* Conflicts with #<Logger:0x00007f850223f5d0> ()
+* #<Logger:0x00007f9d74beb540> () (Recommended but not required)
+* #<Logger:0x00007f9d74beb540> () (Suggested but not required)
+* Conflicts with #<Logger:0x00007f9d74beb540> ()
 
 # Attributes
 
@@ -72,6 +39,40 @@ Build Status
 Build status on our [CI server](https://chef-ci.typo3.org):
 
 - *master* (release): [![Build Status master branch](https://chef-ci.typo3.org/job/TYPO3-cookbooks/job/site-mailrelaytypo3org/branch/master/badge/icon)](https://chef-ci.typo3.org/job/TYPO3-cookbooks/job/site-mailrelaytypo3org/branch/master/)
+
+
+## Setting up Secrets
+
+Every mailrelay server needs an own mail account. Set this up in Mailcow and configure it to **disable sender checks**.
+
+Storing the secret in chef-vault can be done as follows (after the host has been provisioned with _t3-base_):
+
+- Create local file containing data bag data (`mailtypo3org-srvXXXtypo3org.json`):
+
+```json
+{
+  "smarthosts": {
+    "mail.typo3.org": {
+      "username": "mailrelay-srvXXX",
+      "password": "123456"
+    }
+  }
+}
+```
+
+- Create vault item:
+
+```bash
+$ knife vault create passwords-production mailtypo3org-srvXXXtypo3org --mode client --search 'fqdn:srvXXX.typo3.org' --json mailtypo3org-srvXXXtypo3org.json
+```
+
+- Optionally: Verify that the host is really added to the vault keys:
+
+```bash
+$ knife data bag show passwords-production  mailtypo3org-srvXXXtypo3org_keys
+```
+
+- Delete clear-text file, DO NOT COMMIT!
 
 
 # License and Maintainer
