@@ -9,6 +9,7 @@ driver:
   name: dokken
   privileged: true # because Docker and SystemD/Upstart
   # chef_version: 12.19.36
+  hostname: kitchen-mailrelay
 
 transport:
   name: dokken
