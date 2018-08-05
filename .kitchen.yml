@@ -17,3 +17,6 @@ suites:
     run_list:
       - recipe[site-mailrelaytypo3org::default]
     attributes:
+      postfix:
+        main:
+          relayhost: smarthost.example.com.invalid
