@@ -14,9 +14,9 @@ Accept mails from the internal network and forward them via mail.typo3.org as sm
 
 * t3-base (~> 0.2.0)
 * t3-chef-vault (~> 1.0.0)
-* #<Logger:0x00007f9d74beb540> () (Recommended but not required)
-* #<Logger:0x00007f9d74beb540> () (Suggested but not required)
-* Conflicts with #<Logger:0x00007f9d74beb540> ()
+* #<Logger:0x00007fd4de443468> () (Recommended but not required)
+* #<Logger:0x00007fd4de443468> () (Suggested but not required)
+* Conflicts with #<Logger:0x00007fd4de443468> ()
 
 # Attributes
 
@@ -53,7 +53,7 @@ Storing the secret in chef-vault can be done as follows (after the host has been
 {
   "smarthosts": {
     "mail.typo3.org": {
-      "username": "mailrelay-srvXXX",
+      "username": "mailrelay-srvXXX@typo3.org",
       "password": "123456"
     }
   }
