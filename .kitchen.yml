@@ -1,7 +1,7 @@
 ---
 driver:
   name: vagrant
-  vm_hostname: kitchen-mailrelay
+  vm_hostname: kitchen.mailrelay.test
 
 verifier:
   name: inspec
