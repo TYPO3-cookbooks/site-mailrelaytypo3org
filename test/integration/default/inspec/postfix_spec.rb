@@ -19,6 +19,6 @@ control 'postfix' do
 
   describe file('/etc/postfix/sasl_passwd') do
     it { should exist }
-    its('content') { should include 'smarthost.example.com john.doe:123456'}
+    its('content') { should include 'smarthost.example.com john.doe@example.com:123456'}
   end
 end

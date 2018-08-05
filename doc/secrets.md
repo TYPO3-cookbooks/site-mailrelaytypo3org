@@ -10,7 +10,7 @@ Storing the secret in chef-vault can be done as follows (after the host has been
 {
   "smarthosts": {
     "mail.typo3.org": {
-      "username": "mailrelay-srvXXX",
+      "username": "mailrelay-srvXXX@typo3.org",
       "password": "123456"
     }
   }
