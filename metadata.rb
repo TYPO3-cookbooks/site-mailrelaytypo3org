@@ -12,8 +12,7 @@ supports         "debian"
 depends          "t3-base",     "~> 0.2.0"
 
 # TYPO3-cookbooks, pin to minor (~> 1.1.0)
-# depends          "zabbix-custom-checks", "~> 0.2.0"
-# depends          "ssl_certificates",     "~> 0.2.0"
+depends "t3-chef-vault",     "~> 1.0.0"
 
 # community cookbooks, pin to patchlevel (= 1.1.1)
-# depends          "postfix",    "= 2.1.4"
+# depends          "postfix",    "= 5.3.1"

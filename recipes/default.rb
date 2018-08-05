@@ -11,3 +11,9 @@ include_recipe "postfix"
 
 # include_recipe "#{cookbook_name}::_logrotate"
 
+include_recipe 't3-chef-vault'
+settings = chef_vault_password('mail.typo3.org', node['fqdn'], 'smarthosts')
+
+edit_resource(:template, node['postfix']['sasl_password_file']) do
+  variables settings: settings
+end
