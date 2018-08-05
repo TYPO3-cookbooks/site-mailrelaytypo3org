@@ -1,6 +1,6 @@
 {
   "smarthosts": {
-    "smarthost.example.com": {
+    "smarthost.example.com.invalid": {
       "username": "john.doe@example.com",
       "password": "123456"
     }
